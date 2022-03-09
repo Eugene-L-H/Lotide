@@ -21,6 +21,7 @@ const assertArraysEqual = (arr1, arr2) => {
   }
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, 2, 3], [1, 2, 5]);
-assertArraysEqual([1, 2, 3], []);
+// TEST CODE
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // PASS
+assertArraysEqual([1, 2, 3], [1, 2, 5]); // FAIL
+assertArraysEqual([1, 2, 3], []); // FAIL
