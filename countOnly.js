@@ -33,7 +33,7 @@ const countOnly = function(allItems, itemsToCount) {
   console.log('count obj = ', count);
   console.log('results obj = ', results);
   return results;
-}
+};
 
 // TEST CODE
 const firstNames = [
