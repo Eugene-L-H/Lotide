@@ -1,15 +1,3 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-
-  if (actual === expected) {
-    const pass = '✅✅✅';
-    console.log(`${pass} Assertion PASS: ${actual} === ${expected}`);
-  } else {
-    const fail = '⚠️⚠️⚠️';
-    console.log(`${fail} Assertion FAIL: ${actual} !== ${expected}`);
-  }
-};
-
 const eqArrays = (arr1, arr2) => {
   // If parameters are of different length return false
   if (arr1.length !== arr2.length) return false;
@@ -45,17 +33,30 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+// FUNCTION IMPLEMENTATION
+const assertObjectsEqual = function(actual, expected) {
+  const inspect = require('util').inspect;
+  const equal = eqObjects(actual, expected);
+
+  if (equal) {
+    const pass = '✅✅✅';
+    console.log(`${pass} Assertion PASS: ${inspect(actual)} === ${inspect(expected)}`);
+  } else {
+    const fail = '⚠️⚠️⚠️';
+    console.log(`${fail} Assertion FAIL: ${inspect(actual)} !== ${inspect(expected)}`);
+  }
+};
+
 // TEST CODE
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true); // => true
-
 const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc), false); // => false
-
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true); // => true
-
 const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); // => false
+
+assertObjectsEqual(ab, ba); // PASS
+assertObjectsEqual(ab, abc); // FAIL
+assertObjectsEqual(cd, dc); // PASS
+assertObjectsEqual(cd, cd2); // FAIL
+assertObjectsEqual(cd, cd); // PASS
