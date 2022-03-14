@@ -10,8 +10,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp"); // false
-assertEqual(1, 1); // true
-assertEqual('string', 'string'); // true
-assertEqual(1, 2); // false
+module.exports = assertEqual;
