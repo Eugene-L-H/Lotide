@@ -16,19 +16,19 @@ const letterPositions = require('./letterPositions');
 const map = require('./map');
 
 module.exports = {
-  head:   head,
-  tail:   tail,
-  middle: middle,
-  assertArrayEqual: assertArrayEqual,
-  assertEqual: assertEqual,
-  assertObjectsEqual: assertObjectsEqual,
-  countLetters: countLetters,
-  countOnly: countOnly,
-  eqArrays: eqArrays,
-  eqObjects: eqObjects,
-  findKey: findKey,
-  findKeyByValue: findKeyByValue,
-  flatten: flatten,
-  letterPositions: letterPositions,
-  map: map
+  head,
+  tail,
+  middle,
+  assertArrayEqual,
+  assertEqual,
+  assertObjectsEqual,
+  countLetters,
+  countOnly,
+  eqArrays,
+  eqObjects,
+  findKey,
+  findKeyByValue,
+  flatten,
+  letterPositions,
+  map
 };

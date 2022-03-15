@@ -47,16 +47,20 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-const abc = { a: "1", b: "2", c: "3" };
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-const cd2 = { c: "1", d: ["2", 3, 4] };
+module.exports = eqArrays;
+module.exports = eqObjects;
+module.exports = assertObjectsEqual;
 
-assertObjectsEqual(ab, ba); // PASS
-assertObjectsEqual(ab, abc); // FAIL
-assertObjectsEqual(cd, dc); // PASS
-assertObjectsEqual(cd, cd2); // FAIL
-assertObjectsEqual(cd, cd); // PASS
+// TEST CODE
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// const abc = { a: "1", b: "2", c: "3" };
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+
+// assertObjectsEqual(ab, ba); // PASS
+// assertObjectsEqual(ab, abc); // FAIL
+// assertObjectsEqual(cd, dc); // PASS
+// assertObjectsEqual(cd, cd2); // FAIL
+// assertObjectsEqual(cd, cd); // PASS
